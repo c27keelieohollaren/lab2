@@ -81,7 +81,7 @@ architecture top_basys3_arch of top_basys3 is
   -- declare the component of your top-level design unit under test (UUT)
     component sevenseg_decoder
         port(
-            i_Hex : in std_logic_vector(3 downto 0);
+            i_Hex : in std_logic_vector(3 downto 0)  := "0000";
             o_seg_n: out std_logic_vector(6 downto 0));
     end component;
 
@@ -107,5 +107,5 @@ begin
 	-- other 7SD are kept off
 	-----------------------------------------------------
 	w_7SD <= not btnC;
-	an <= (0=> w_7SD, others => '1');
+	an <= (0 => w_7SD, others => '1');
 end top_basys3_arch;
