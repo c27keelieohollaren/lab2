@@ -35,7 +35,7 @@ entity sevenseg_decoder_tb is
 end sevenseg_decoder_tb;
 
 architecture Behavioral of sevenseg_decoder_tb is
-    signal i_Hex: STD_LOGIC_VECTOR (3 downto 0);
+    signal i_Hex: STD_LOGIC_VECTOR (3 downto 0) := "0000";
     signal o_seg_n : STD_LOGIC_VECTOR (6 downto 0);
     
     component sevenseg_decoder 
