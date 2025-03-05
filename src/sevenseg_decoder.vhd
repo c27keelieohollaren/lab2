@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+
 -- Company: 
 -- Engineer: 
 -- 
@@ -17,7 +17,6 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
 
 
 library IEEE;
@@ -39,9 +38,10 @@ entity sevenseg_decoder is
 end sevenseg_decoder;
 
 architecture Behavioral of sevenseg_decoder is
+    signal o_seg_temp : std_logic_vector(6 downto 0);
 begin
     with i_Hex select
-    o_seg_n <=  "1111110" when "0000",
+o_seg_n <=  "1111110" when "0000",
             "0110000" when "0001",
             "1101101" when "0010",
             "1111001" when "0011",
@@ -59,7 +59,4 @@ begin
             "0111000" when "1111",
             "0000000" when others;
 
-
-
 end Behavioral;
-
