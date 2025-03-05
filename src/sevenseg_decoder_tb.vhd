@@ -49,15 +49,9 @@ architecture test_bench of sevenseg_decoder_tb is
 begin
     sevenseg_decoder_0: sevenseg_decoder 
     port map (
-        i_Hex => w_Hex,
-        o_seg_n(6) => w_seg_n(0),
-        o_seg_n(5) => w_seg_n(1),
-        o_seg_n(4) => w_seg_n(2),
-        o_seg_n(3) => w_seg_n(3),
-        o_seg_n(2) => w_seg_n(4),
-        o_seg_n(1) => w_seg_n(5),
-        o_seg_n(0) => w_seg_n(6)
-        );
+    i_Hex => w_Hex,
+    o_seg_n => w_seg_n 
+    );
         
     test_process: process
     begin
