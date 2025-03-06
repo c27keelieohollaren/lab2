@@ -35,24 +35,18 @@ entity sevenseg_decoder_tb is
 end sevenseg_decoder_tb;
 
 architecture test_bench of sevenseg_decoder_tb is
-    component sevenseg_decoder
-    port(
-        i_Hex: STD_LOGIC_VECTOR (3 downto 0);
-        o_seg_n : STD_LOGIC_VECTOR (6 downto 0));
-        
-    end component;
+    signal i_Hex: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    signal o_seg_n : STD_LOGIC_VECTOR (6 downto 0);
     
-        signal w_Hex : STD_LOGIC_VECTOR (3 downto 0) := (others => '0');
-        signal w_seg_n :  STD_LOGIC_VECTOR (6 downto 0);
-
+    component sevenseg_decoder 
+        Port ( i_Hex : in STD_LOGIC_VECTOR (3 downto 0);
+                o_seg_n : out STD_LOGIC_VECTOR (6 downto 0));
+        end component;
 
 begin
-    sevenseg_decoder_0: sevenseg_decoder 
-    port map (
-    i_Hex => w_Hex,
-    o_seg_n => w_seg_n 
-    );
-        
+    uut: sevenseg_decoder port map (
+        i_Hex => i_Hex,
+        o_seg_n => o_seg_n);
     test_process: process
     begin
         w_hex <= x"0"; wait for 10 ns;
